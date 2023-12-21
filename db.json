@@ -4,25 +4,25 @@
       "company": "Wipro",
       "username": "John",
       "password": "John@1234",
+      "select": false,
       "id": 1
     },
     {
-      "company": "Amnit",
-      "username": "Deepika Deore",
-      "password": "Deep@1111",
+      "company": "Infosys",
+      "username": "Geetha",
+      "password": "Geetha%@123%",
+      "select": false,
       "id": 2
     },
     {
-      "company": "Mverse Tech",
-      "username": "Abil",
-      "password": "Abil$67899",
-      "id": 4
-    },
-    {
-      "company": "Cyber Evolve",
-      "username": "Jigna V",
-      "password": "jiGna%345",
-      "id": 5
+      "company": "Cbil",
+      "username": "Kishor",
+      "password": "Kishor$%^90",
+      "select": false,
+      "id": 3
     }
+  ],
+  "deletedUser": [
+    
   ]
 }

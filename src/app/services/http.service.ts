@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { throwError } from 'rxjs/internal/observable/throwError';
 import { catchError } from 'rxjs/operators';
 
@@ -25,6 +26,21 @@ export class HttpService {
     let url= this.baseUrl + endpoint;
     return this.http.delete(url,{headers:this.httpHeaders}).pipe(catchError(this.handleHttpErrorResponse));
   }
+
+  deleteRecords(ids:number[]){
+    if(confirm('Are you sure want to delete?')){
+      const url:string="http://localhost:3000/deletedUser";
+      return this.http.post(url,{ids})
+    }
+    return of({});
+  }
+
+  // deleteData(ids: number[]) {
+	 
+	// 	const data = {'ids' : ids};
+	// 	const url ="http://localhost:3000/users";
+  //   return this.http.post<any>(url, data);
+  // }
   //Error handling 
   handleHttpErrorResponse(error:HttpErrorResponse):any{
     console.log(error);

@@ -53,10 +53,13 @@ export class LoginComponent {
   }
   signup() {
     console.log("Sign Up Form", this.SignupForm.value);
-    this.http.postDataToserver('users', this.SignupForm.value).subscribe(
+    this.http.postDataToserver('users', Object.assign(this.SignupForm.value,{'select':false})).subscribe(
       (response: any) => {
         if (response && this.SignupForm.touched) {
+          
+          this.SignupForm.reset();
           alert("Signup successful!");
+         
         }
         else {
           alert("try again!");
